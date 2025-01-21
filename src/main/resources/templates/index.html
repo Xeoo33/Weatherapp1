@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Weather Information</h1>
+
+    <div th:if="${error != null}">
+        <p th:text="${error}"></p>
+    </div>
+
+    <div th:if="${city != null}">
+        <p>City: <span th:text="${city}"></span></p>
+        <p>Temperature: <span th:text="${temperature}"></span></p>
+        <p>Description: <span th:text="${description}"></span></p>
+        <p>Humidity: <span th:text="${humidity}"></span></p>
+    </div>
+
+    <form action="/" method="get">
+        <label for="city">City: </label>
+        <input type="text" id="city" name="city" value="" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    
+</body>
+</html>
